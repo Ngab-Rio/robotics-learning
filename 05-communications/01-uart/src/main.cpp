@@ -15,6 +15,7 @@ void loop() {
     if (Serial.available() > 0) {
         message = Serial.readStringUntil('\n');
         message.trim();
+        message.toLowerCase();
         if (message == "on" || message == "ON") {
             digitalWrite(LED_PIN, HIGH);
             ledState = true;
